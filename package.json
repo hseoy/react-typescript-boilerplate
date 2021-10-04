@@ -1,0 +1,9 @@
+{
+  "name": "react-typescript-boilerplate",
+  "version": "0.1.0",
+  "description": "react & typescript boilerplate without CRA",
+  "repository": "https://github.com/hseoy/react-typescript-boilerplate.git",
+  "author": "Your Name <your.email@example.com",
+  "license": "MIT",
+  "private": true
+}
