@@ -12,7 +12,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, '../build'),
   },
-  modules: {
+  module: {
     rules: [
       {
         test: /\.(js|jsx|ts|tsx)$/,
