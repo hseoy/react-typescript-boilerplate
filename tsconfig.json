@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "noResolve": false,
+    "noImplicitAny": false,
+    "removeComments": false,
+    "sourceMap": true,
+    "allowJs": true,
+    "jsx": "react-jsx",
+    "allowSyntheticDefaultImports": true,
+    "keyofStringsOnly": true,
+    "baseUrl": ".",
+  },
+  "typeRoots": ["node_modules/@types", "src/@types"],
+  "exclude": [
+    "node_modules",
+    "build",
+    "scripts",
+    "webpack",
+    "./node_modules/**/*"
+  ],
+  "include": ["./src/**/*", "@type", "__tests__"]
+}
