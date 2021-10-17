@@ -18,6 +18,11 @@ module.exports = {
           'css-loader',
         ],
       },
+      {
+        test: /\.(gif|jpe?g|png|svg|webp)$/i,
+        loader: 'image-webpack-loader',
+        enforce: 'pre',
+      },
     ],
   },
   plugins: [
