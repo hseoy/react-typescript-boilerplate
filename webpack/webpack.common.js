@@ -1,6 +1,9 @@
 'use strict';
 
+const env = require('./env.js');
+
 const path = require('path');
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
@@ -35,6 +38,7 @@ module.exports = {
       template: './public/index.html',
       filename: 'index.html',
     }),
+    new webpack.DefinePlugin(env.stringified),
   ],
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.jsx', '.json'],
