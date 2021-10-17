@@ -2,6 +2,7 @@
 
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 const imageInlineSizeLimit = process.env.IMAGE_INLINE_SIZE_LIMIT
   ? parseInt(process.env.IMAGE_INLINE_SIZE_LIMIT)
@@ -29,6 +30,7 @@ module.exports = {
     ]
   },
   plugins: [
+    new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       template: './public/index.html',
       filename: 'index.html',
