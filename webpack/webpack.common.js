@@ -28,6 +28,7 @@ module.exports = {
         loader: 'url-loader',
         options: {
           limit: imageInlineSizeLimit,
+          name: 'static/media/[name].[contenthash:8].[ext]',
         },
       },
     ]
