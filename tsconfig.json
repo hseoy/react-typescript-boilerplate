@@ -22,6 +22,7 @@
     "build",
     "scripts",
     "webpack",
+    "src/setupTests.ts",
     "./node_modules/**/*"
   ],
   "include": ["./src/**/*", "@types", "__tests__"]

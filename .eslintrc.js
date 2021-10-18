@@ -7,7 +7,13 @@ module.exports = {
     'plugin:@typescript-eslint/recommended',
     'plugin:prettier/recommended',
   ],
-  plugins: ['prettier', 'react', '@typescript-eslint', 'react-hooks'],
+  plugins: [
+    'prettier',
+    'react',
+    '@typescript-eslint',
+    'testing-library',
+    'react-hooks',
+  ],
   env: {
     browser: true,
     es2021: true,
@@ -37,5 +43,12 @@ module.exports = {
     ],
     'import/extensions': ['off'],
     'import/prefer-default-export': 'off',
+    'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
   },
+  overrides: [
+    {
+      files: ['**/__tests__/**/*.[jt]s?(x)', '**/?(*.)+(spec|test).[jt]s?(x)'],
+      extends: ['plugin:testing-library/react'],
+    },
+  ],
 };
