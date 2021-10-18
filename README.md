@@ -43,7 +43,7 @@ $ yarn build
 
 ### Test
 
-I built a test environment using jest and react-testing-library.
+The test environment was built using the jest and react testing library.
 
 ```bash
 $ yarn test
