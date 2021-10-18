@@ -35,7 +35,7 @@ $ yarn dev
 
 ### Production build
 
-Build outputs are created in `dist`.
+Build outputs are created in `build`.
 
 ```bash
 $ yarn build
