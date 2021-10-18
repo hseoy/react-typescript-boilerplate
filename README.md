@@ -9,11 +9,11 @@ This is a React & Type Script boilerplate built without a CRA.
 
 ## Features
 
-- React & TypeScript
-- Webpack & Babel
-- ESLint & Prettier
-- Jest & React Testing Library
-- Husky & Lint-Staged
+- [React](https://reactjs.org/) & [TypeScript](https://www.typescriptlang.org/)
+- [Webpack](https://webpack.js.org/) & [Babel](https://babeljs.io/)
+- [ESLint](https://eslint.org/) & [Prettier](https://prettier.io/)
+- [Jest](https://jestjs.io/) & [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
+- [Husky](https://typicode.github.io/husky/#/) & [Lint-Staged](https://github.com/okonet/lint-staged)
 
 ## Getting Started
 
