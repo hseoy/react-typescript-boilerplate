@@ -27,7 +27,7 @@ module.exports = {
       {
         test: /\.(js|jsx|ts|tsx)$/,
         use: [
-          'babel-loader', 
+          'babel-loader',
           {
             loader: 'ts-loader',
             options: {
@@ -53,7 +53,7 @@ module.exports = {
           name: 'static/media/[name].[contenthash:8].svg',
         },
       },
-    ]
+    ],
   },
   plugins: [
     new CleanWebpackPlugin(),
@@ -66,7 +66,7 @@ module.exports = {
     }),
     new CopyPlugin({
       patterns: [
-        { 
+        {
           from: paths.appPublic,
           to: '.',
           globOptions: {

@@ -6,12 +6,12 @@ const path = require('path');
 const fs = require('fs');
 
 const appDirectory = fs.realpathSync(process.cwd());
-const resolveApp = relativePath => path.resolve(appDirectory, relativePath);
+const resolveApp = (relativePath) => path.resolve(appDirectory, relativePath);
 
 const publicUrlOrPath = getPublicUrlOrPath(
   process.env.NODE_ENV === 'development',
   require(resolveApp('package.json')).homepage,
-  process.env.PUBLIC_URL
+  process.env.PUBLIC_URL,
 );
 
 const moduleFileExtensions = [
@@ -29,8 +29,8 @@ const moduleFileExtensions = [
 ];
 
 const resolveModule = (resolveFn, filePath) => {
-  const extension = moduleFileExtensions.find(extension =>
-    fs.existsSync(resolveFn(`${filePath}.${extension}`))
+  const extension = moduleFileExtensions.find((extension) =>
+    fs.existsSync(resolveFn(`${filePath}.${extension}`)),
   );
 
   if (extension) {
