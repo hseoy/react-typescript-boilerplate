@@ -1,11 +1,18 @@
 // https://github.com/facebook/create-react-app
 'use strict';
 
+const getPublicUrlOrPath = require('./getPublicUrlOrPath.js');
 const path = require('path');
 const fs = require('fs');
 
 const appDirectory = fs.realpathSync(process.cwd());
 const resolveApp = relativePath => path.resolve(appDirectory, relativePath);
+
+const publicUrlOrPath = getPublicUrlOrPath(
+  process.env.NODE_ENV === 'development',
+  require(resolveApp('package.json')).homepage,
+  process.env.PUBLIC_URL
+);
 
 const moduleFileExtensions = [
   'web.mjs',
@@ -39,4 +46,5 @@ module.exports = {
   appBuild: resolveApp('build'),
   appPublic: resolveApp('public'),
   appHtml: resolveApp('public/index.html'),
+  publicUrlOrPath,
 };

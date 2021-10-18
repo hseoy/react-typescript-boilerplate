@@ -1,7 +1,7 @@
 'use strict';
 
-const env = require('./env.js');
 const paths = require('./paths.js');
+const getClientEnvironment = require('./env.js');
 
 const path = require('path');
 const webpack = require('webpack');
@@ -14,6 +14,8 @@ const CopyPlugin = require('copy-webpack-plugin');
 const imageInlineSizeLimit = process.env.IMAGE_INLINE_SIZE_LIMIT
   ? parseInt(process.env.IMAGE_INLINE_SIZE_LIMIT)
   : 1024 * 10;
+
+const env = getClientEnvironment(paths.publicUrlOrPath.slice(0, -1));
 
 module.exports = {
   entry: paths.appIndex,
@@ -60,6 +62,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: paths.appHtml,
       filename: 'index.html',
+      templateParameters: env.raw,
     }),
     new CopyPlugin({
       patterns: [
