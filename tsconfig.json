@@ -12,6 +12,9 @@
     "allowSyntheticDefaultImports": true,
     "keyofStringsOnly": true,
     "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
   },
   "typeRoots": ["node_modules/@types", "src/@types"],
   "exclude": [
