@@ -1,6 +1,7 @@
 'use strict';
 
 const env = require('./env.js');
+const paths = require('./paths.js');
 
 const path = require('path');
 const webpack = require('webpack');
@@ -8,15 +9,16 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 
 const imageInlineSizeLimit = process.env.IMAGE_INLINE_SIZE_LIMIT
   ? parseInt(process.env.IMAGE_INLINE_SIZE_LIMIT)
   : 1024 * 10;
 
 module.exports = {
-  entry: './src/index.tsx',
+  entry: paths.appIndex,
   output: {
-    path: path.resolve(__dirname, '../build'),
+    path: paths.appBuild,
   },
   module: {
     rules: [
@@ -56,8 +58,19 @@ module.exports = {
     new CaseSensitivePathsPlugin(),
     new ForkTsCheckerWebpackPlugin(),
     new HtmlWebpackPlugin({
-      template: './public/index.html',
+      template: paths.appHtml,
       filename: 'index.html',
+    }),
+    new CopyPlugin({
+      patterns: [
+        { 
+          from: paths.appPublic,
+          to: '.',
+          globOptions: {
+            ignore: [paths.appHtml],
+          },
+        },
+      ],
     }),
     new webpack.DefinePlugin(env.stringified),
   ],
