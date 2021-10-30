@@ -1,5 +1,0 @@
-node_modules/
-build
-./webpack
-**/*.js
-setupTests.ts

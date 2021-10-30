@@ -2,4 +2,3 @@ node_modules/
 package.json
 yarn.lock
 build
-.github
