@@ -7,16 +7,16 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "dev": "env-cmd webpack serve --mode development",
-    "build": "env-cmd webpack --mode production --progress",
+    "dev": "env-cmd webpack serve --mode development --config ./config/webpack.config.js",
+    "build": "env-cmd webpack --mode production --progress --config ./config/webpack.config.js",
     "lint": "yarn eslint --ext .tsx --ext .ts .",
     "lint:fix": "yarn eslint --ext .tsx --ext .ts . --fix",
     "prettier:write": "yarn prettier --write .",
     "prepare": "husky install",
-    "precommit": "yarn lint-staged",
-    "test": "jest",
-    "test:watch": "jest --watchAll",
-    "test:coverage": "jest --coverage"
+    "precommit": "yarn lint-staged --config ./config/lintstagedrc.json",
+    "test": "jest --config ./config/jest.config.js",
+    "test:watch": "jest --watchAll --config ./config/jest.config.js",
+    "test:coverage": "jest --coverage --config ./config/jest.config.js"
   },
   "devDependencies": {
     "@babel/core": "^7.15.8",

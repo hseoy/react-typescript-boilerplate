@@ -21,7 +21,7 @@
     "node_modules",
     "build",
     "scripts",
-    "webpack",
+    "config/webpack",
     "src/setupTests.ts",
     "./node_modules/**/*"
   ],

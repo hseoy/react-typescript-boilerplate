@@ -27,7 +27,13 @@ module.exports = {
       {
         test: /\.(js|jsx|ts|tsx)$/,
         use: [
-          'babel-loader',
+          {
+            loader: 'babel-loader',
+            options: {
+              babelrc: true,
+              configFile: paths.babelConfig,
+            },
+          },
           {
             loader: 'ts-loader',
             options: {
